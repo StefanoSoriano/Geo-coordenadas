@@ -1,4 +1,4 @@
-/*  Query en lenguaje T-SQL que obtiene las coordenadas geográficas de un archino .kml
+/*  Query en lenguaje T-SQL que obtiene las coordenadas geográficas de un archivo .kml
     obtenido de Google Earth */
 
 
