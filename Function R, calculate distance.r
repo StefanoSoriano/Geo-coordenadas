@@ -14,7 +14,7 @@ CalculateDist <- function(long1, lat1, long2, lat2) {
     lat2 <- lat2 / 57.2958
     #  Calculando la distancia 
     distance <- (sin(lat1) * sin(lat2)) + (cos(lat1) * cos(lat2) * cos(long2 - long1))
-    #  Convirtiendo a Kilómetros
+    #  Convirtiendo a kilómetros
     if (distance != 0) {
         distance = 6371 * atan(sqrt(1 - (distance^2)) / distance)
     }
@@ -22,5 +22,5 @@ CalculateDist <- function(long1, lat1, long2, lat2) {
 }
 
 #  Entonces, la función tiene cuatro argumentos formales los cuales "leerán" las coordenas geográficas correspondientes.
-#  Así por ejemplo, al analizar un data.frame que contenga información geo-espacial y querer calcular la distancia entre
+#  Así por ejemplo, al analizar un data frame que contenga información geoespacial y querer calcular la distancia entre
 #  dos coordenas;
