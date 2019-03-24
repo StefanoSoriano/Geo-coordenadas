@@ -1,10 +1,19 @@
 #  La siguiente función la tomé del libro Data Science with Microsoft SQL Server 2016, 
 #  página número 30. Debido a que la función escrita en dicho libro
 #  está en lenguaje T-SQL la tranformé a lenguaje R, 
-#  además tranformé la unidad de medida de longitud del radio de la tierra de millas terrestres a kilómetros.
+#  además tranformé la unidad de medida de longitud del radio de la tierra de millas terrestres a kilómetros
+#  y redondeé la distancia a dos dígitos decimales.
 #  RADIO DE LA TIERRA MEDIDO EN MILLAS TERRESTRES = 3958.75 mi
 #  RADIO DE LA TIERRA MEDIDO EN KILÓMETROS = 6,371.00 km
 
+setwd("C:/Users/../..")
+geoespacial <- read.csv("coordinates.csv", header = T, stringsAsFactors = F)
+geoespacialLAG <- geoespacial[-1,]
+
+long1 <- geoespacial$Longitude
+lat1 <- geoespacial$Latitude
+long2 <- geoespacialLAG$Longitude
+lat2 <- geoespacialLAG$Latitude
 
 CalculateDist <- function(long1, lat1, long2, lat2) {
     #  Convirtiendo coordenadas a radianes
@@ -17,9 +26,14 @@ CalculateDist <- function(long1, lat1, long2, lat2) {
     #  Convirtiendo a kilómetros
     if (distance != 0) {
         distance = 6371 * atan(sqrt(1 - (distance^2)) / distance)
+        distance <- round(distance, digits = 2)
     }
     return(distance)  
 }
+
+distancia_directa <- CalculateDist(long1, lat1, long2, lat2)
+info_distancia <- paste("La distancia directa entre",geoespacial$Location,"y", geoespacialLAG$Location,"es de",distancia_directa,"kilómetros.", sep = " ")
+info_distancia
 
 #  Entonces, la función tiene cuatro argumentos formales los cuales "leerán" las coordenas geográficas correspondientes.
 #  Así por ejemplo, al analizar un data frame que contenga información geoespacial y querer calcular la distancia entre
