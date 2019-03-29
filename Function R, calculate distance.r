@@ -22,7 +22,6 @@ CalculateDist <- function(long1, lat1, long2, lat2) {
     lat2 <- lat2 / 57.2958
     #  Calculando la distancia 
     distance <- (sin(lat1) * sin(lat2)) + (cos(lat1) * cos(lat2) * cos(long2 - long1))
-    
     if (distance != 0) {
         radius <- (3958.75 * 1.609344) #  Convirtiendo radio de la tierra de millas terrestres a kilómetros 
         distance = radius * atan(sqrt(1 - (distance^2)) / distance)
@@ -31,10 +30,12 @@ CalculateDist <- function(long1, lat1, long2, lat2) {
     return(distance)  
 }
 
+#  Obteniendo información 
+
 distancia_directa <- CalculateDist(long1, lat1, long2, lat2)
 info_distancia <- paste("La distancia directa entre",geoespacial$Location,"y", geoespacialLAG$Location,"es de",distancia_directa,"kilómetros.", sep = " ")
 info_distancia
 
 #  Entonces, la función tiene cuatro argumentos formales los cuales "leerán" las coordenas geográficas correspondientes.
-#  Así por ejemplo, al analizar un data frame que contenga información geoespacial y querer calcular la distancia entre
+#  Así, por ejemplo, al analizar un data frame que contenga información geoespacial y querer calcular la distancia entre
 #  dos coordenas;
