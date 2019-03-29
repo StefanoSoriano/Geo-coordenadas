@@ -33,8 +33,15 @@ CalculateDist <- function(long1, lat1, long2, lat2) {
 #  Obteniendo información 
 
 distancia_directa <- CalculateDist(long1, lat1, long2, lat2)
-info_distancia <- paste("La distancia directa entre",geoespacial$Location,"y", geoespacialLAG$Location,"es de",distancia_directa,"kilómetros.", sep = " ")
+index_0 <- which.min(distancia_directa)
+info_distancia <- paste("La distancia directa entre", 
+                         geoespacial$Location,"y", 
+                         geoespacialLAG$Location,"es de",
+                         distancia_directa,"kilómetros.", 
+                         sep = " ")
+info_distancia <- info_distancia[-c(index_0)]
 info_distancia
+
 
 #  Entonces, la función tiene cuatro argumentos formales los cuales "leerán" las coordenas geográficas correspondientes.
 #  Así, por ejemplo, al analizar un data frame que contenga información geoespacial y querer calcular la distancia entre
