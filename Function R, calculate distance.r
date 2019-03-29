@@ -37,7 +37,7 @@ index_0 <- which.min(distancia_directa)
 info_distancia <- paste("La distancia directa entre", 
                          geoespacial$Location,"y", 
                          geoespacialLAG$Location,"es de",
-                         distancia_directa,"kilómetros.", 
+                         distancia_directa,"km", 
                          sep = " ")
 info_distancia <- info_distancia[-c(index_0)]
 info_distancia
