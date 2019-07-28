@@ -1,3 +1,4 @@
+#  La siguiente función la tomé del libro Data Science with Microsoft SQL Server 2016, 
 #  página número 30. Debido a que la función escrita en dicho libro
 #  está en lenguaje T-SQL la tranformé a lenguaje R, 
 #  además tranformé la unidad de medida de longitud del radio de la tierra de millas terrestres a kilómetros
@@ -43,6 +44,4 @@ info_distancia <- info_distancia[-c(index_0)]
 info_distancia
 
 
-#  Entonces, la función tiene cuatro argumentos formales los cuales "leerán" las coordenas geográficas correspondientes.
-#  Así, por ejemplo, al analizar un data frame que contenga información geoespacial y querer calcular la distancia entre
-#  dos coordenas;
+#  La función tiene cuatro argumentos formales los cuales "leerán" las coordenas geográficas correspondientes.
