@@ -1,5 +1,4 @@
-/* Query en lenguaje T-SQL que obtiene las coordenadas geográficas de un archivo .kml
-    obtenido de Google Earth */
+/* Query en lenguaje T-SQL que obtiene las coordenadas geográficas de un archivo .kml de Google Earth */
 
 DECLARE @XML XML
 SELECT @XML = XML_GEO
