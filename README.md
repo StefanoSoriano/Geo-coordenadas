@@ -36,7 +36,7 @@ CalculateDist <- function(long1, lat1, long2, lat2) {
     return(distance)  
 }
 ```
-###  Obteniendo información
+###  Obteniendo la distancia en kilómetros
 ```r
 distancia_directa <- CalculateDist(long1, lat1, long2, lat2)
 index_0 <- which.min(distancia_directa)
