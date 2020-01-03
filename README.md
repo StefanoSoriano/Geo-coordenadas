@@ -82,7 +82,7 @@ info_distancia
 ```sql
 DECLARE @XML XML
 SELECT @XML = XML_GEO
-FROM OPENROWSET(BULK 'C:\Users\..\..\San Francisco California.kml' , SINGLE_BLOB) AS GEO(XML_GEO)
+FROM OPENROWSET(BULK 'C:\..\..\..\San Francisco California.kml' , SINGLE_BLOB) AS GEO(XML_GEO)
 DECLARE @XML_EST XML = (SELECT @XML
 FOR XML RAW('Earth'))
 DECLARE @idoc int
@@ -180,6 +180,7 @@ GO
 ##  Mostrando las coordenadas almacenadas
 ```sql
 SELECT *
-FROM Geocoordinates
+FROM Geocoordinates;
+GO
 ```
 
