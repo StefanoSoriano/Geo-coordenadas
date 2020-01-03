@@ -11,7 +11,7 @@
 
 ## Script en R para calcular la distancia directa entre dos coordenadas geográficas
 ```r
-setwd("C:/Users/../..")
+setwd("C:/../../..")
 geoespacial <- read.csv("coordinates.csv", header = T, stringsAsFactors = F)
 geoespacialLAG <- geoespacial[-1,]
 
@@ -77,7 +77,7 @@ info_distancia
 </kml>
 ```
 
-## Script en T-SQL para obtener y almacenar las coordenadas geográficas 
+## Script en T-SQL para obtener y almacenar las coordenadas geográficas  del archivo kml
 ```sql
 DECLARE @XML XML
 SELECT @XML = XML_GEO
