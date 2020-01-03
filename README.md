@@ -48,7 +48,8 @@ info_distancia <- paste("La distancia directa entre",
 info_distancia <- info_distancia[-c(index_0)]
 info_distancia
 ```
-###  Archivo .kml obtenido de Google Earth
+###  Archivo .kml obtenido de Google Earth 
+**Ubicación:** San Francisco California
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -174,6 +175,7 @@ GO
 ```sql
 INSERT INTO Geocoordinates
 VALUES(@LOCATION, @LONG, @LAT);
+GO
 ```
 ###  Mostrando las coordenadas almacenadas
 ```sql
