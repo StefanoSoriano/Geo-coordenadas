@@ -5,7 +5,7 @@
 
 ###  La siguiente función la tomé del libro [Data Science with Microsoft SQL Server 2016](https://blogs.msdn.microsoft.com/microsoft_press/2016/10/19/free-ebook-data-science-with-microsoft-sql-server-2016/), página número 30.
 
-### Debido a que la función escrita en dicho libro está en lenguaje T-SQL la transformé a lenguaje R, además transformé la unidad de medida de longitud del radio de la tierra de millas terrestres a kilómetros y redondeé la distancia a dos dígitos decimales.
+### Debido a que la función escrita en dicho libro está en lenguaje T-SQL la transformé a lenguaje R, además, transformé la unidad de medida de longitud del radio de la tierra de millas terrestres a kilómetros y redondeé la distancia a dos dígitos decimales.
 ##### _Radio de a tierra medido en millas terrestres_ = 3958.75 mi
 ##### _Radio de a tierra medido en kilómetros_ = 6,371.00 km
 
