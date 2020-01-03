@@ -164,10 +164,10 @@ USE GeocoordinatesDB;
 GO
 
 CREATE TABLE Geocoordinates (
-ID INT NOT NULL IDENTITY(1,1),
-Location NVARCHAR(95),
-Longitude FLOAT,
-Latitude  FLOAT
+ID INT    IDENTITY (1,1) NOT NULL,
+Location  NVARCHAR (95)  NOT NULL,
+Longitude FLOAT          NOT NULL,
+Latitude  FLOAT          NOT NULL
 );
 GO
 ```
