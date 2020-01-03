@@ -8,7 +8,7 @@
 #  RADIO DE LA TIERRA MEDIDO EN MILLAS TERRESTRES = 3958.75 mi
 #  RADIO DE LA TIERRA MEDIDO EN KILÓMETROS = 6,371.00 km
 
-setwd("C:/Users/../..")
+setwd("C:/../../..")
 geoespacial <- read.csv("coordinates.csv", header = T, stringsAsFactors = F)
 geoespacialLAG <- geoespacial[-1,]
 
