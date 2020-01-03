@@ -78,11 +78,11 @@ WHERE localname = 'coordinates')
 
 SET @COORD = (SELECT [text] as Longitude 
              FROM OPENXML (@idoc, '/Earth', 1)  
-			 WHERE parentid = @COORD)
+	     WHERE parentid = @COORD)
 
 SET @LOCNAME = (SELECT [text] as Location 
-            FROM OPENXML (@idoc, '/Earth', 1)  
-			WHERE parentid = @LOCNAME)
+                FROM OPENXML (@idoc, '/Earth', 1)  
+	        WHERE parentid = @LOCNAME)
 
 IF @LOCNAME = 'placepageUri'
   BEGIN
@@ -91,8 +91,8 @@ IF @LOCNAME = 'placepageUri'
      FROM OPENXML (@idoc, '/Earth', 1)
      WHERE localname = 'name')
       SET @LOCNAME = (SELECT [text] as Location 
-           FROM OPENXML (@idoc, '/Earth', 1)  
-			WHERE parentid = @LOCNAME)
+                      FROM OPENXML (@idoc, '/Earth', 1)  
+		      WHERE parentid = @LOCNAME)
   END
 ELSE
   BEGIN
@@ -101,8 +101,8 @@ ELSE
 GO
 
 SET @LOCADD = (SELECT [text] as Location 
-            FROM OPENXML (@idoc, '/Earth', 1)  
-			WHERE parentid = @LOCADD)
+               FROM OPENXML (@idoc, '/Earth', 1)  
+	       WHERE parentid = @LOCADD)
 
 DECLARE @LOCATION VARCHAR(100), @LONG FLOAT, @LAT VARCHAR(50)
 
