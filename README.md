@@ -164,7 +164,7 @@ USE GeocoordinatesDB;
 GO
 
 CREATE TABLE Geocoordinates (
-ID int NOT NULL IDENTITY(1,1),
+ID INT NOT NULL IDENTITY(1,1),
 Location NVARCHAR(95),
 Longitude FLOAT,
 Latitude  FLOAT
