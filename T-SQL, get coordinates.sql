@@ -23,8 +23,8 @@ FROM OPENXML (@idoc, '/Earth', 1)
 WHERE localname = 'coordinates')
 
 SET @COORD = (SELECT [text] as Longitude 
-             FROM OPENXML (@idoc, '/Earth', 1)  
-	     WHERE parentid = @COORD)
+              FROM OPENXML (@idoc, '/Earth', 1)  
+	      WHERE parentid = @COORD)
 
 SET @LOCNAME = (SELECT [text] as Location 
                 FROM OPENXML (@idoc, '/Earth', 1)  
