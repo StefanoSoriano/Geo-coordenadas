@@ -83,8 +83,7 @@ info_distancia
 DECLARE @XML XML
 SELECT @XML = XML_GEO
 FROM OPENROWSET(BULK 'C:\..\..\..\San Francisco California.kml' , SINGLE_BLOB) AS GEO(XML_GEO)
-DECLARE @XML_EST XML = (SELECT @XML
-                        FOR XML RAW('Earth'))
+DECLARE @XML_EST XML = (SELECT @XML FOR XML RAW('Earth'))
 DECLARE @idoc int
 EXEC sp_xml_preparedocument @idoc OUTPUT, @XML_EST
 
