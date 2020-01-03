@@ -2,7 +2,7 @@
 
 DECLARE @XML XML
 SELECT @XML = XML_GEO
-FROM OPENROWSET(BULK 'C:\Users\..\..\San Francisco California.kml' , SINGLE_BLOB) AS GEO(XML_GEO)
+FROM OPENROWSET(BULK 'C:\..\..\..\San Francisco California.kml' , SINGLE_BLOB) AS GEO(XML_GEO)
 DECLARE @XML_EST XML = (SELECT @XML
 FOR XML RAW('Earth'))
 DECLARE @idoc int
@@ -27,11 +27,11 @@ WHERE localname = 'coordinates')
 
 SET @COORD = (SELECT [text] as Longitude 
              FROM OPENXML (@idoc, '/Earth', 1)  
-			 WHERE parentid = @COORD)
+	     WHERE parentid = @COORD)
 
 SET @LOCNAME = (SELECT [text] as Location 
-            FROM OPENXML (@idoc, '/Earth', 1)  
-			WHERE parentid = @LOCNAME)
+                FROM OPENXML (@idoc, '/Earth', 1)  
+		WHERE parentid = @LOCNAME)
 
 IF @LOCNAME = 'placepageUri'
   BEGIN
@@ -39,9 +39,9 @@ IF @LOCNAME = 'placepageUri'
      SELECT MIN(id)
      FROM OPENXML (@idoc, '/Earth', 1)
      WHERE localname = 'name')
-      SET @LOCNAME = (SELECT [text] as Location 
-           FROM OPENXML (@idoc, '/Earth', 1)  
-			WHERE parentid = @LOCNAME)
+     SET @LOCNAME = (SELECT [text] as Location 
+                      FROM OPENXML (@idoc, '/Earth', 1)  
+		      WHERE parentid = @LOCNAME)
   END
 ELSE
   BEGIN
@@ -50,8 +50,8 @@ ELSE
 GO
 
 SET @LOCADD = (SELECT [text] as Location 
-            FROM OPENXML (@idoc, '/Earth', 1)  
-			WHERE parentid = @LOCADD)
+               FROM OPENXML (@idoc, '/Earth', 1)  
+	       WHERE parentid = @LOCADD)
 
 DECLARE @LOCATION VARCHAR(100), @LONG FLOAT, @LAT VARCHAR(50)
 
@@ -99,5 +99,6 @@ VALUES(@LOCATION, @LONG, @LAT);
 --  Mostrando las coordenadas almacenadas
 
 SELECT *
-FROM Geocoordinates
+FROM Geocoordinates;
+GO
 
