@@ -154,7 +154,7 @@ SET @LAT =  (
     SELECT LEFT(@LAT,CHARINDEX(',', @LAT)-1)
 )
 ```
-##  Creando tabla Geocoordinates en la base de datos GeocoordinatesDB
+##  Creando la tabla Geocoordinates en la base de datos GeocoordinatesDB
 ```sql
 CREATE DATABASE GeocoordinatesDB;
 GO
