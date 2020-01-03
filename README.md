@@ -177,7 +177,7 @@ INSERT INTO Geocoordinates
 VALUES(@LOCATION, @LONG, @LAT);
 GO
 ```
-###  Mostrando las coordenadas almacenadas
+##  Mostrando las coordenadas almacenadas
 ```sql
 SELECT *
 FROM Geocoordinates
