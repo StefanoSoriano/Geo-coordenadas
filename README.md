@@ -119,9 +119,9 @@ IF @LOCNAME = 'placepageUri'
      SELECT MIN(id)
      FROM OPENXML (@idoc, '/Earth', 1)
      WHERE localname = 'name')
-      SET @LOCNAME = (SELECT [text] as Location 
-                      FROM OPENXML (@idoc, '/Earth', 1)  
-		      WHERE parentid = @LOCNAME)
+     SET @LOCNAME = (SELECT [text] as Location 
+                     FROM OPENXML (@idoc, '/Earth', 1)  
+		     WHERE parentid = @LOCNAME)
   END
 ELSE
   BEGIN
