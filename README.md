@@ -3,9 +3,9 @@
 
 ### En ocasiones cuando analizamos datos geoespaciales nos interesa calcular la distancia directa entre dos coordenadas geográficas, este repositorio contiene una función en R que permite calcularla, también contiene una query en T-SQL combinada con lenguaje XML para obtener las coordenadas geográficas de los archivos .kml de Google Earth.
 
-####  La siguiente función la tomé del libro Data Science with Microsoft SQL Server 2016, página número 30. Debido a que la función escrita en dicho libro está en lenguaje T-SQL la tranformé a lenguaje R, además tranformé la unidad de medida de longitud del radio de la tierra de millas terrestres a kilómetros y redondeé la distancia a dos dígitos decimales.
-##### _RADIO DE LA TIERRA MEDIDO EN MILLAS TERRESTRES_ = 3958.75 mi
-##### _RADIO DE LA TIERRA MEDIDO EN KILÓMETROS_ = 6,371.00 km
+###  La siguiente función la tomé del libro [Data Science with Microsoft SQL Server 2016](https://blogs.msdn.microsoft.com/microsoft_press/2016/10/19/free-ebook-data-science-with-microsoft-sql-server-2016/), página número 30. Debido a que la función escrita en dicho libro está en lenguaje T-SQL la transformé a lenguaje R, además transformé la unidad de medida de longitud del radio de la tierra de millas terrestres a kilómetros y redondeé la distancia a dos dígitos decimales.
+#### _RADIO DE LA TIERRA MEDIDO EN MILLAS TERRESTRES_ = 3958.75 mi
+#### _RADIO DE LA TIERRA MEDIDO EN KILÓMETROS_ = 6,371.00 km
 
 ## Script en R para calcular ditancia directa entre dos coordenadas geográficas
 ```r
