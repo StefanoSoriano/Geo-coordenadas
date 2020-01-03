@@ -9,7 +9,7 @@
 ##### _Radio de a tierra medido en millas terrestres_ = 3958.75 mi
 ##### _Radio de a tierra medido en kilómetros_ = 6,371.00 km
 
-## Script en R para calcular ditancia directa entre dos coordenadas geográficas
+## Script en R para calcular la distancia directa entre dos coordenadas geográficas
 ```r
 setwd("C:/Users/../..")
 geoespacial <- read.csv("coordinates.csv", header = T, stringsAsFactors = F)
