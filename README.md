@@ -1,7 +1,7 @@
 # Coordenas geográficas
 **Archivos .kml** *Google Earth*
 
-### En ocasiones cuando analizamos datos geoespaciales nos interesa calcular la distancia directa entre dos coordenadas geográficas, este repositorio contiene una función en R que permite calcularla, también contiene una query en T-SQL combinada con lenguaje XML para obtener las coordenadas geográficas de los archivos .kml de Google Earth.
+### En ocasiones cuando analizamos datos georrelacionados nos interesa calcular la distancia directa entre dos coordenadas geográficas, este repositorio contiene una función en R que permite calcularla, también contiene una query en T-SQL combinada con lenguaje XML para obtener las coordenadas geográficas de los archivos .kml de Google Earth.
 
 ###  La siguiente función la tomé del libro [Data Science with Microsoft SQL Server 2016](https://blogs.msdn.microsoft.com/microsoft_press/2016/10/19/free-ebook-data-science-with-microsoft-sql-server-2016/) página número 30.
 
