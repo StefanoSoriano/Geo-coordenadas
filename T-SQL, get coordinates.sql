@@ -93,6 +93,7 @@ GO
 
 INSERT INTO Geocoordinates
 VALUES(@LOCATION, @LONG, @LAT);
+GO
 
 --  Mostrando las coordenadas almacenadas
 
