@@ -48,6 +48,34 @@ info_distancia <- paste("La distancia directa entre",
 info_distancia <- info_distancia[-c(index_0)]
 info_distancia
 ```
+###  Archivo .kml obtenido de Google Earth
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Placemark id="1.2.1">
+	<name>San Francisco</name>
+	<address>California, EE. UU.</address>
+	<snippet>California, EE. UU.</snippet>
+	<description><![CDATA[<!DOCTYPE html><html><head></head><body><script type="text/javascript">window.location.href="https://www.google.com/earth/rpc/entity?lat=37.75769999999999&lng=-122.43759999999999&fid=0x80859a6d00690021:0x4a501367f076adff&hl=es-419&gl=mx&client=earth-client&cv=7.3.2.5776&useragent=GoogleEarth/7.3.2.5776(Windows;Microsoft Windows (6.2.9200.0);es-419;kml:2.2;client:Pro;type:default)";</script></body></html>]]></description>
+	<styleUrl>#geocode</styleUrl>
+	<ExtendedData>
+		<Data name="placepageUri">
+			<value>https://www.google.com/earth/rpc/entity?lat=37.75769999999999&amp;lng=-122.43759999999999&amp;fid=0x80859a6d00690021:0x4a501367f076adff&amp;hl=es-419&amp;gl=mx&amp;client=earth-client&amp;cv=7.3.2.5776&amp;useragent=GoogleEarth/7.3.2.5776(Windows;Microsoft Windows (6.2.9200.0);es-419;kml:2.2;client:Pro;type:default)</value>
+		</Data>
+	</ExtendedData>
+	<MultiGeometry>
+		<Point>
+			<coordinates>-122.4194155,37.7749295,0</coordinates>
+		</Point>
+		<LinearRing>
+			<coordinates>
+				-122.5301100709413,37.69190857179407,0 -122.5301100709413,37.85795042820593,0 -122.3087209290588,37.85795042820593,0 -122.3087209290588,37.69190857179407,0 -122.5301100709413,37.69190857179407,0 
+			</coordinates>
+		</LinearRing>
+	</MultiGeometry>
+</Placemark>
+</kml>
+```
 
 ## Script en T-SQL para obtener y almacenar las coordenadas geográficas 
 ```sql
@@ -152,3 +180,4 @@ VALUES(@LOCATION, @LONG, @LAT);
 SELECT *
 FROM Geocoordinates
 ```
+
