@@ -1,4 +1,3 @@
-
 DECLARE @XML XML
 SELECT @XML = XML_GEO
 FROM OPENROWSET(BULK 'C:\..\..\..\San Francisco California.kml' , SINGLE_BLOB) AS GEO(XML_GEO)
