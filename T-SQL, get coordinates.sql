@@ -25,14 +25,9 @@ SELECT MIN(id)
 FROM OPENXML (@idoc, '/Earth', 1)
 WHERE localname = 'coordinates')
 
-
 SET @COORD = (SELECT [text] as Longitude 
              FROM OPENXML (@idoc, '/Earth', 1)  
 			 WHERE parentid = @COORD)
-
-/*SELECT *
-FROM OPENXML (@idoc, '/Earth', 1) */
-
 
 SET @LOCNAME = (SELECT [text] as Location 
             FROM OPENXML (@idoc, '/Earth', 1)  
@@ -51,7 +46,8 @@ IF @LOCNAME = 'placepageUri'
 ELSE
   BEGIN
      SET @LOCNAME = @LOCNAME
-  END
+  END;
+GO
 
 SET @LOCADD = (SELECT [text] as Location 
             FROM OPENXML (@idoc, '/Earth', 1)  
@@ -66,7 +62,8 @@ IF @LOCADD IS NOT NULL
 ELSE 
   BEGIN
    SET @LOCATION = @LOCNAME
-  END
+  END;
+GO
 
 SET @LONG = (
     SELECT LEFT(@COORD,CHARINDEX(',', @COORD)-1)
@@ -78,34 +75,29 @@ SET @LAT =  (
     SELECT LEFT(@LAT,CHARINDEX(',', @LAT)-1)
 )
 
-/*SELECT @LOCATION AS Location, 
-       @LONG AS Longitude, 
-	   @LAT as Latitude
-*/
+--  Creando table Geocoordinates en la base de datos GeocoordinatesDB
 
-
-/*CREATE DATABASE GeocoordinatesDB;
-GO*/
+CREATE DATABASE GeocoordinatesDB;
+GO
 
 USE GeocoordinatesDB;
-
-/*DROP TABLE Geocoordinates
+GO
 
 CREATE TABLE Geocoordinates (
 ID int NOT NULL IDENTITY(1,1),
 Location NVARCHAR(95),
 Longitude FLOAT,
 Latitude  FLOAT
-)*/
+);
+GO
 
-
-/*TRUNCATE TABLE Geocoordinates;*/
-
+--  Almacenando las coordenadas dentro de la tabla Geocoordinates
 
 INSERT INTO Geocoordinates
 VALUES(@LOCATION, @LONG, @LAT);
 
+--  Mostrando las coordenadas almacenadas
+
 SELECT *
 FROM Geocoordinates
-GO
 
