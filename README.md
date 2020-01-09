@@ -78,7 +78,7 @@ info_distancia
 </kml>
 ```
 
-### Script en T-SQL para obtener y almacenar las coordenadas geográficas de una ubicación, archivo .kml
+### Script en T-SQL para obtener y almacenar las coordenadas geográficas de una ubicación almacenada en un archivo .kml
 ```sql
 DECLARE @XML XML
 SELECT @XML = XML_GEO
