@@ -78,7 +78,7 @@ info_distancia
 </kml>
 ```
 
-### Script en T-SQL para obtener y almacenar las coordenadas geográficas de una ubicación almacenada en un archivo .kml
+### Script en T-SQL para obtener y acumular las coordenadas geográficas de una ubicación almacenada en un archivo .kml
 ```sql
 DECLARE @XML XML
 SELECT @XML = XML_GEO
@@ -170,7 +170,7 @@ Latitude  FLOAT          NOT NULL
 );
 GO
 ```
-##  Almacenando las coordenadas dentro de la tabla Geocoordinates
+##  Acumulando las coordenadas dentro de la tabla Geocoordinates
 ```sql
 INSERT INTO Geocoordinates
 VALUES(@LOCATION, @LONG, @LAT);
